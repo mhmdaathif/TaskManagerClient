@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-title>{{ editing ? 'Edit Task' : 'New Task' }}</mat-card-title>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Title</mat-label>
+      <input matInput formControlName="title" />
+        <mat-error *ngIf="taskForm.get('title')?.invalid && (taskForm.get('title')?.touched || taskForm.get('title')?.dirty)">
+          Title is required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Description</mat-label>
+      <textarea matInput formControlName="description" rows="3"></textarea>
+      <mat-error *ngIf="taskForm.get('description')?.invalid && (taskForm.get('description')?.touched || taskForm.get('description')?.dirty)">
+        Description is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="isCompleted">Completed</mat-checkbox>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit">
+        {{ editing ? 'Update' : 'Create' }}
+      </button>
+      <button mat-button type="button" (click)="resetForm()" *ngIf="editing">
+        Cancel
+      </button>
+      <button mat-button type="button" (click)="resetForm()" *ngIf="!editing">
+        Clear Form
+      </button>
+    </div>
+  </form>
+</mat-card>

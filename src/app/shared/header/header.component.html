@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+  <span>Task Manager</span>
+  <span class="spacer"></span>
+  <span *ngIf="username">Welcome, {{ username }}</span>
+  <button mat-button color="accent" (click)="logout()">Logout</button>
+</mat-toolbar>
