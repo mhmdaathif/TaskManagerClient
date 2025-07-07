@@ -41,7 +41,7 @@ export class LoginComponent {
         this.router.navigate(['/tasks']);
       },
       error: () => {
-        this.snackBar.open('Invalid credentials', 'Close', { duration: 3000 });
+        this.snackBar.open('Login failed. Please enter valid credentials', 'Close', { duration: 3000 });
         this.loading = false;
       }
     });
