@@ -23,11 +23,8 @@
       <button mat-raised-button color="primary" type="submit">
         {{ editing ? 'Update' : 'Create' }}
       </button>
-      <button mat-button type="button" (click)="resetForm()" *ngIf="editing">
-        Cancel
-      </button>
-      <button mat-button type="button" (click)="resetForm()" *ngIf="!editing">
-        Clear Form
+      <button mat-button type="button" (click)="resetForm()">
+       {{ editing ? 'Cancel' : 'Clear Form' }}
       </button>
     </div>
   </form>

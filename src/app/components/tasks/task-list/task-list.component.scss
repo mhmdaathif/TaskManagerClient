@@ -18,3 +18,17 @@ mat-card {
   min-width: 300px;
 }
 
+@media (max-width: 600px) {
+  .task-layout {
+    flex-direction: column !important;
+  }
+
+  .left-pane, .right-pane {
+    min-width: 100% !important;
+  }
+
+  .left-pane {
+    margin-bottom: 20px;
+  }
+}
+
